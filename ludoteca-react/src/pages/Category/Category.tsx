@@ -80,13 +80,17 @@ export const Category = () => {
         </Table>
       </TableContainer>
       <div className="newButton">
-        <Button variant="contained">Nueva categoría</Button>
+        <Button variant="contained" onClick={() => setOpenCreate(true)}>
+          Nueva categoría
+        </Button>
       </div>
-      <CreateCategory
-        create={createCategory}
-        category={null}
-        closeModal={handleCloseCreate}
-      />
+      {openCreate && (
+        <CreateCategory
+          create={createCategory}
+          category={null}
+          closeModal={handleCloseCreate}
+        />
+      )}
     </div>
   );
 };
