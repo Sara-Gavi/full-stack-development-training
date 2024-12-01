@@ -12,6 +12,7 @@ import ClearIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
 import styles from "./Category.module.css";
 import { Category as CategoryModel } from "../../types/Category";
+import CreateCategory from "./components/CreateCategory";
 
 export const Category = () => {
   const data = [
@@ -24,6 +25,10 @@ export const Category = () => {
       name: "Test 2",
     },
   ];
+
+  const createCategory = () => {};
+
+  const handleCloseCreate = () => {};
 
   return (
     <div className="container">
@@ -73,6 +78,11 @@ export const Category = () => {
       <div className="newButton">
         <Button variant="contained">Nueva categoría</Button>
       </div>
+      <CreateCategory
+        create={createCategory}
+        category={null}
+        closeModal={handleCloseCreate}
+      />
     </div>
   );
 };
