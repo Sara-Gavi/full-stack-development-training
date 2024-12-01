@@ -26,6 +26,8 @@ export const Category = () => {
     },
   ];
 
+  const [openCreate, setOpenCreate] = useState(false);
+
   const createCategory = () => {};
 
   const handleCloseCreate = () => {};
