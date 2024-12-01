@@ -30,7 +30,9 @@ export const Category = () => {
 
   const createCategory = () => {};
 
-  const handleCloseCreate = () => {};
+  const handleCloseCreate = () => {
+    setOpenCreate(false);
+  };
 
   return (
     <div className="container">
