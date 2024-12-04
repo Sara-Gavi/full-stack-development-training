@@ -96,7 +96,7 @@ export const Category = () => {
       {openCreate && (
         <CreateCategory
           create={createCategory}
-          category={null}
+          category={categoryToUpdate}
           closeModal={handleCloseCreate}
         />
       )}
