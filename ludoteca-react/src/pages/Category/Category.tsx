@@ -34,6 +34,7 @@ export const Category = () => {
 
   const handleCloseCreate = () => {
     setOpenCreate(false);
+    setCategoryToUpdate(null);
   };
 
   return (
