@@ -68,7 +68,14 @@ export const Category = () => {
                 </TableCell>
                 <TableCell>
                   <div className={styles.tableActions}>
-                    <IconButton aria-label="update" color="primary">
+                    <IconButton
+                      aria-label="update"
+                      color="primary"
+                      onClick={() => {
+                        setCategoryToUpdate(category);
+                        setOpenCreate(true);
+                      }}
+                    >
                       <EditIcon />
                     </IconButton>
                     <IconButton aria-label="delete" color="error">
