@@ -13,6 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import styles from "./Category.module.css";
 import { Category as CategoryModel } from "../../types/Category";
 import CreateCategory from "./components/CreateCategory";
+import { ConfirmDialog } from "../../components/ConfirmDialog";
 
 export const Category = () => {
   const data = [
