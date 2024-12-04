@@ -39,6 +39,8 @@ export const Category = () => {
     setCategoryToUpdate(null);
   };
 
+  const deleteCategory = () => {};
+
   return (
     <div className="container">
       <h1>Listado de Categorías</h1>
