@@ -27,6 +27,8 @@ export const Category = () => {
   ];
 
   const [openCreate, setOpenCreate] = useState(false);
+  const [categoryToUpdate, setCategoryToUpdate] =
+    useState<CategoryModel | null>(null);
 
   const createCategory = () => {};
 
