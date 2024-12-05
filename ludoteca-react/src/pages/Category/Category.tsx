@@ -83,7 +83,13 @@ export const Category = () => {
                     >
                       <EditIcon />
                     </IconButton>
-                    <IconButton aria-label="delete" color="error">
+                    <IconButton
+                      aria-label="delete"
+                      color="error"
+                      onClick={() => {
+                        setIdToDelete(category.id);
+                      }}
+                    >
                       <ClearIcon />
                     </IconButton>
                   </div>
