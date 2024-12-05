@@ -111,6 +111,14 @@ export const Category = () => {
           closeModal={handleCloseCreate}
         />
       )}
+      {!!idToDelete && (
+        <ConfirmDialog
+          title="Eliminar categoría"
+          text="Atención si borra la categoría se perderán sus datos. ¿Desea eliminar la categoría?"
+          confirm={deleteCategory}
+          closeModal={() => setIdToDelete("")}
+        />
+      )}
     </div>
   );
 };
