@@ -15,6 +15,14 @@ import { Category as CategoryModel } from "../../types/Category";
 import CreateCategory from "./components/CreateCategory";
 import { ConfirmDialog } from "../../components/ConfirmDialog";
 
+import { useAppDispatch } from "../../redux/hooks";
+import {
+  useCreateCategoryMutation,
+  useDeleteCategoryMutation,
+  useGetCategoriesQuery,
+  useUpdateCategoryMutation,
+} from "../../redux/services/ludotecaApi";
+
 export const Category = () => {
   const data = [
     {
