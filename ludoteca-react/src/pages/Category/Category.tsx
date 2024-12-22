@@ -24,16 +24,18 @@ import {
 } from "../../redux/services/ludotecaApi";
 
 export const Category = () => {
-  const data = [
-    {
-      id: "1",
-      name: "Test 1",
-    },
-    {
-      id: "2",
-      name: "Test 2",
-    },
-  ];
+  const dispatch = useAppDispatch();
+  const { data, error, isLoading } = useGetCategoriesQuery(null);
+
+  const [
+    deleteCategoryApi,
+    { isLoading: isLoadingDelete, error: errorDelete },
+  ] = useDeleteCategoryMutation();
+  const [createCategoryApi, { isLoading: isLoadingCreate }] =
+    useCreateCategoryMutation();
+
+  const [updateCategoryApi, { isLoading: isLoadingUpdate }] =
+    useUpdateCategoryMutation();
 
   const [openCreate, setOpenCreate] = useState(false);
   const [categoryToUpdate, setCategoryToUpdate] =
