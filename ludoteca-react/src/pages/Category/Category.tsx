@@ -70,42 +70,43 @@ export const Category = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {data.map((category: CategoryModel) => (
-              <TableRow
-                key={category.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {category.id}
-                </TableCell>
-                <TableCell component="th" scope="row">
-                  {category.name}
-                </TableCell>
-                <TableCell>
-                  <div className={styles.tableActions}>
-                    <IconButton
-                      aria-label="update"
-                      color="primary"
-                      onClick={() => {
-                        setCategoryToUpdate(category);
-                        setOpenCreate(true);
-                      }}
-                    >
-                      <EditIcon />
-                    </IconButton>
-                    <IconButton
-                      aria-label="delete"
-                      color="error"
-                      onClick={() => {
-                        setIdToDelete(category.id);
-                      }}
-                    >
-                      <ClearIcon />
-                    </IconButton>
-                  </div>
-                </TableCell>
-              </TableRow>
-            ))}
+            {data &&
+              data.map((category: CategoryModel) => (
+                <TableRow
+                  key={category.id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {category.id}
+                  </TableCell>
+                  <TableCell component="th" scope="row">
+                    {category.name}
+                  </TableCell>
+                  <TableCell>
+                    <div className={styles.tableActions}>
+                      <IconButton
+                        aria-label="update"
+                        color="primary"
+                        onClick={() => {
+                          setCategoryToUpdate(category);
+                          setOpenCreate(true);
+                        }}
+                      >
+                        <EditIcon />
+                      </IconButton>
+                      <IconButton
+                        aria-label="delete"
+                        color="error"
+                        onClick={() => {
+                          setIdToDelete(category.id);
+                        }}
+                      >
+                        <ClearIcon />
+                      </IconButton>
+                    </div>
+                  </TableCell>
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
