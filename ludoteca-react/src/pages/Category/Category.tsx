@@ -64,7 +64,11 @@ export const Category = () => {
     setCategoryToUpdate(null);
   };
 
-  const deleteCategory = () => {};
+  const deleteCategory = () => {
+    deleteCategoryApi(idToDelete)
+      .then(() => setIdToDelete(""))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="container">
