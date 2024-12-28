@@ -42,7 +42,22 @@ export const Category = () => {
     useState<CategoryModel | null>(null);
   const [idToDelete, setIdToDelete] = useState("");
 
-  const createCategory = () => {};
+  const createCategory = (category: string) => {
+    setOpenCreate(false);
+    if (categoryToUpdate) {
+      updateCategoryApi({ id: categoryToUpdate.id, name: category })
+        .then(() => {
+          setCategoryToUpdate(null);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      createCategoryApi({ name: category })
+        .then(() => {
+          setCategoryToUpdate(null);
+        })
+        .catch((err) => console.log(err));
+    }
+  };
 
   const handleCloseCreate = () => {
     setOpenCreate(false);
