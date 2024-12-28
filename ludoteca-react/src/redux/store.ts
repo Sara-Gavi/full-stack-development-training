@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { setupListeners } from "@reduxjs/toolkit/query"; //import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { ludotecaAPI } from "./services/ludotecaApi";
+import messageReducer from "./features/messageSlice";
 
 export const store = configureStore({
   reducer: {
+    messageReducer,
     [ludotecaAPI.reducerPath]: ludotecaAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
